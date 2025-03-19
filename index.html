@@ -1,27 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>你的名字 | 个人主页</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D坐标系与正方体</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        .header { font-size: 2.5em; font-weight: bold; color: #2c3e50; }
-        .button { 
-            display: inline-block; 
-            padding: 10px 20px; 
-            background: #3498db; 
-            color: white; 
-            text-decoration: none; 
-            margin: 20px; 
+        body { margin: 0; }
+        canvas { display: block; }
+        #controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
             border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+        .input-group label {
+            display: inline-block;
+            width: 20px;
+            margin-right: 5px;
+        }
+        .input-group input {
+            width: 60px;
+            margin-right: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="header">吴承峰 | 技术专家</div>
-    <p>教育背景：北京科技大学 物流工程</p>
-    <p>10年教育科技产品经验 | 全栈开发者</p>
-    <a href="#projects" class="button">查看项目</a>
-    <a href="https://github.com/你的用户名" class="button">GitHub</a>
+    <div id="controls">
+        <div class="input-group">
+            <label>X:</label>
+            <input type="number" id="x" value="0">
+            <label>Y:</label>
+            <input type="number" id="y" value="0">
+            <label>Z:</label>
+            <input type="number" id="z" value="0">
+        </div>
+        <button id="addCube">添加正方体</button>
+        <button id="removeCube">删除正方体</button>
+        <button id="toggleAxes">显示/隐藏坐标系</button>
+    </div>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
