@@ -114,4 +114,170 @@
             background-color: #e7f3fd; /* 淡蓝色背景 */
             color: #3498db; /* 蓝色文字 */
             padding: 8px 15px;
-            border-radius
+            border-radius: 15px; /* 圆角 */
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: transform 0.2s ease; /* 添加悬停效果 */
+        }
+         #skills li:hover {
+             transform: scale(1.05); /* 悬停时放大一点 */
+         }
+
+        /* --- 项目展示 --- */
+        .project {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            transition: box-shadow 0.3s ease;
+        }
+         .project:hover {
+             box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 悬停阴影 */
+         }
+
+        .project h3 {
+            margin-top: 0;
+            color: #2980b9; /* 深一点的蓝色 */
+        }
+
+        .project a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- 联系方式 --- */
+        #contact ul {
+            list-style: none;
+            padding: 0;
+        }
+         #contact li {
+             margin-bottom: 10px;
+         }
+        #contact a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        #contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- 页脚 --- */
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            background-color: #ecf0f1; /* 浅灰色 */
+            color: #777;
+            font-size: 0.9em;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        /* --- 响应式设计 (非常基础的示例) --- */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            #about img.profile-pic {
+                float: none; /* 在小屏幕上取消浮动 */
+                display: block; /* 块级显示 */
+                margin: 0 auto 15px; /* 居中显示 */
+            }
+            #skills ul {
+                justify-content: center; /* 技能项居中 */
+            }
+            .container {
+                 margin: 10px auto;
+                 padding: 0 10px;
+            }
+             section {
+                 padding: 1rem;
+             }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>李明 (Li Ming)</h1>
+            <p>Web开发者 | 设计爱好者 | 终身学习者</p>
+        </header>
+
+        <main>
+            <section id="about">
+                <h2>关于我</h2>
+                <img src="https://via.placeholder.com/150" alt="李明的头像" class="profile-pic">
+                <p>你好！我是李明。我对构建美观、用户友好的网站和应用程序充满热情。我喜欢将想法转化为现实，并通过代码解决问题。</p>
+                <p>我拥有计算机科学背景，并且不断学习新的技术和设计趋势。我相信技术的力量可以改善生活，创造价值。</p>
+                <p>在业余时间，我喜欢阅读、摄影，以及探索城市里隐藏的咖啡馆。偶尔也会写一些技术博客，分享我的学习心得。</p>
+            </section>
+
+            <section id="skills">
+                <h2>我的技能</h2>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3 (Sass/Less)</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>React</li>
+                    <li>Vue.js</li>
+                    <li>Node.js</li>
+                    <li>Python (Flask/Django)</li>
+                    <li>Git & GitHub</li>
+                    <li>响应式设计</li>
+                    <li>UI/UX 基础</li>
+                    <li>数据库 (SQL/NoSQL)</li>
+                    <li>测试 & 调试</li>
+                </ul>
+            </section>
+
+            <section id="projects">
+                <h2>项目展示</h2>
+
+                <div class="project">
+                    <h3>个人博客平台</h3>
+                    <p>一个使用 Node.js 和 Express 构建的响应式博客系统，前端采用 React。支持 Markdown 编辑、文章分类和标签功能。</p>
+                    <p><a href="#" target="_blank">查看项目 (示例链接)</a> | <a href="#" target="_blank">GitHub 仓库 (示例链接)</a></p>
+                </div>
+
+                <div class="project">
+                    <h3>在线待办事项应用</h3>
+                    <p>一个简洁的待办事项 Web 应用，使用 Vue.js 和 LocalStorage 实现。专注于简洁的用户界面和流畅的用户体验。</p>
+                    <p><a href="#" target="_blank">在线演示 (示例链接)</a> | <a href="#" target="_blank">GitHub 仓库 (示例链接)</a></p>
+                </div>
+
+                <div class="project">
+                    <h3>摄影作品集网站</h3>
+                    <p>一个为摄影师设计的静态作品集网站模板，注重图片展示和视觉效果。使用了 HTML、CSS Grid 和少量 JavaScript 实现。</p>
+                    <p><a href="#" target="_blank">查看模板 (示例链接)</a></p>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>联系方式</h2>
+                <p>如果你对我或我的项目感兴趣，或者有任何合作想法，欢迎通过以下方式联系我：</p>
+                <ul>
+                    <li><strong>邮箱:</strong> <a href="mailto:liming.sample@email.com">liming.sample@email.com</a></li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/example" target="_blank">github.com/example</a></li>
+                    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/example" target="_blank">linkedin.com/in/example</a></li>
+                    </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 李明. 保留所有权利。</p>
+            </footer>
+
+    </div> </body>
+</html>
