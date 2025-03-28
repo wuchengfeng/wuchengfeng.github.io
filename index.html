@@ -3,60 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D坐标系与正方体</title>
+    <title>李明的个人主页</title>
     <style>
-        body { margin: 0; }
-        canvas { display: block; }
-        #controls {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 15px;
+        /* --- 全局样式 --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* --- 页头 --- */
+        header {
+            background-color: #3498db; /* 蓝色调 */
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        /* --- 导航 (可选，这里简化处理) --- */
+        /* nav {
+            background: #333;
+            color: #fff;
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        } */
+
+        /* --- 主要内容区域 --- */
+        main {
+            padding: 2rem 0;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: #fff; /* 白色背景 */
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+             border: 1px solid #eee; /* 轻微边框 */
         }
-        .input-group {
+
+        section h2 {
+            color: #3498db; /* 蓝色标题 */
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* --- 关于我 --- */
+        #about img.profile-pic {
+            float: left;
+            margin-right: 20px;
             margin-bottom: 10px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* 圆形头像 */
+            object-fit: cover; /* 保持图片比例 */
+            border: 3px solid #eee;
         }
-        .input-group label {
-            display: inline-block;
-            width: 20px;
-            margin-right: 5px;
+
+         /* 清除浮动 */
+        #about::after {
+            content: "";
+            display: table;
+            clear: both;
         }
-        .input-group input {
-            width: 60px;
-            margin-right: 5px;
+
+
+        /* --- 我的技能 --- */
+        #skills ul {
+            list-style: none;
+            padding: 0;
+            display: flex; /* 使用Flexbox布局 */
+            flex-wrap: wrap; /* 允许换行 */
+            gap: 10px; /* 技能项之间的间隙 */
         }
-        button {
-            margin: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <div id="controls">
-        <div class="input-group">
-            <label>X:</label>
-            <input type="number" id="x" value="0">
-            <label>Y:</label>
-            <input type="number" id="y" value="0">
-            <label>Z:</label>
-            <input type="number" id="z" value="0">
-        </div>
-        <button id="addCube">添加正方体</button>
-        <button id="removeCube">删除正方体</button>
-        <button id="toggleAxes">显示/隐藏坐标系</button>
-    </div>
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
-                "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/"
-            }
-        }
-    </script>
-    <script type="module" src="main.js"></script>
-</body>
-</html>
+
+        #skills li {
+            background-color: #e7f3fd; /* 淡蓝色背景 */
+            color: #3498db; /* 蓝色文字 */
+            padding: 8px 15px;
+            border-radius
